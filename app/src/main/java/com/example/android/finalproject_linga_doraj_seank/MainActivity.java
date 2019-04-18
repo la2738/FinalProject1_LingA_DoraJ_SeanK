@@ -6,6 +6,7 @@ import android.os.Bundle;
 public class MainActivity extends AppCompatActivity {
 
     private int apple =0;
+    private String apples = "apple";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
