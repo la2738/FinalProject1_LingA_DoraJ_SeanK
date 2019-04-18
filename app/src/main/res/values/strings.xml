@@ -1,3 +1,28 @@
 <resources>
-    <string name="app_name">FinalProject_LingA_DoraJ_SeanK</string>
+    <string name="app_name">DIY Home Hacks</string>
+    <string name="counter_top_name">Updating Kitchen CounterTop</string>
+    <string name="smart_bidet_name">Installing SmartBidet Toilet Seat Cover</string>
+    <string name="ispring_name">Installing iSpring Under Sink Water Filtration System</string>
+    <string name="screen_iphone_name">Replacing iPhone 7 Plus Screen</string>
+    <string name="drying_rack_name">DIY Clothes Drying Rack</string>
+    <string name="pencil_box_name">DIY Pencil Box</string>
+    <string name="level_b1">Level: Beginner I</string>
+    <string name="level_b2">Level: Beginner II</string>
+    <string name="level_b3">Level: Beginner III</string>
+    <string name="level_i1">Level: Intermediate I</string>
+    <string name="level_i2">Level: Intermediate II</string>
+    <string name="level_i3">Level: Intermediate III</string>
+    <string name="level_a1">Level: Advanced I</string>
+    <string name="level_a2">Level: Advanced II</string>
+    <string name="level_a3">Level: Advanced III</string>
+    <string name="level_m1">Level: Master</string>
+    <string name="counter_top_time">Estimated Time: 3 - 4 hours</string>
+    <string name="smart_bidet_time">Estimated Time: 15 - 25 minutes</string>
+    <string name="ispring_time">Estimated Time: 1 - 2 hours</string>
+    <string name="screen_iphone_time">Estimated Time: 6 - 15 minutes</string>
+    <string name="drying_rack_time">Estimated Time: 3 - 4 hours</string>
+    <string name="pencil_box_time">Estimated Time: 10 - 20 minutes</string>
+    <string name="toast_do_it">Great Choice! Let\'s Do It!</string>
+    <string name="rating_4">❤❤❤❤</string>
+    <string name="rating_5">❤❤❤❤❤</string>
 </resources>
