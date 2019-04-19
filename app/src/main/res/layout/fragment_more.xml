@@ -1,7 +1,302 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
     android:background="@color/colorAccent">
+
+    <LinearLayout
+        android:id="@+id/login_strip"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:orientation="horizontal"
+        android:layout_alignParentTop="true"
+        android:background="@color/background"
+        android:onClick="login">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_person"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1.7"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Log in or Sign Up        "
+            android:layout_weight="3.5"
+            style="@style/defaultTitle"
+            android:layout_gravity="center_vertical"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:src="@drawable/ic_chevron"
+            android:layout_weight="1"/>
+    </LinearLayout>
+
+    <View android:id="@+id/separator"
+        android:background="@color/separator"
+        android:layout_width = "fill_parent"
+        android:layout_height="2dp"
+        android:layout_centerVertical ="true"
+        android:layout_below="@+id/login_strip"/>
+
+    <LinearLayout
+        android:id="@+id/liked"
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:orientation="horizontal"
+        android:layout_below="@+id/login_strip">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_liked"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1.7"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Liked and Bookmarks"
+            android:layout_weight="3.5"
+            style="@style/defaultTitle"
+            android:layout_gravity="center_vertical"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:src="@drawable/ic_chevron"
+            android:layout_weight="1"/>
+    </LinearLayout>
+
+    <View android:id="@+id/separator2"
+        android:background="@color/separator"
+        android:layout_width = "fill_parent"
+        android:layout_height="2dp"
+        android:layout_centerVertical ="true"
+        android:layout_below="@+id/liked"/>
+
+    <LinearLayout
+        android:id="@+id/creations"
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:orientation="horizontal"
+        android:layout_below="@+id/separator2">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_pen"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1.7"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Creations and Posts"
+            android:layout_weight="3.5"
+            style="@style/defaultTitle"
+            android:layout_gravity="center_vertical"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:src="@drawable/ic_chevron"
+            android:layout_weight="1"/>
+    </LinearLayout>
+
+    <View android:id="@+id/separator3"
+        android:background="@color/separator"
+        android:layout_width = "fill_parent"
+        android:layout_height="2dp"
+        android:layout_centerVertical ="true"
+        android:layout_below="@+id/creations"/>
+
+    <LinearLayout
+        android:id="@+id/notifications"
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:orientation="horizontal"
+        android:layout_below="@+id/separator3">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_notifications_black_24dp"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1.7"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Notification Setting"
+            android:layout_weight="3.5"
+            style="@style/defaultTitle"
+            android:layout_gravity="center_vertical"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:src="@drawable/ic_chevron"
+            android:layout_weight="1"/>
+    </LinearLayout>
+
+    <View android:id="@+id/separator4"
+        android:background="@color/separator"
+        android:layout_width = "fill_parent"
+        android:layout_height="2dp"
+        android:layout_centerVertical ="true"
+        android:layout_below="@+id/notifications"/>
+
+    <LinearLayout
+        android:id="@+id/history"
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:orientation="horizontal"
+        android:layout_below="@+id/separator4">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_history"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1.7"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="History                       "
+            android:layout_weight="3.5"
+            style="@style/defaultTitle"
+            android:layout_gravity="center_vertical"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:src="@drawable/ic_chevron"
+            android:layout_weight="1"/>
+    </LinearLayout>
+
+    <View android:id="@+id/separator5"
+        android:background="@color/separator"
+        android:layout_width = "fill_parent"
+        android:layout_height="2dp"
+        android:layout_centerVertical ="true"
+        android:layout_below="@+id/history"/>
+
+    <LinearLayout
+        android:id="@+id/link_social_media"
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:orientation="horizontal"
+        android:layout_below="@+id/separator5">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_share_black_24dp"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1.7"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Link Social Media      "
+            android:layout_weight="3.5"
+            style="@style/defaultTitle"
+            android:layout_gravity="center_vertical"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:src="@drawable/ic_chevron"
+            android:layout_weight="1"/>
+    </LinearLayout>
+
+    <View android:id="@+id/separator6"
+        android:background="@color/separator"
+        android:layout_width = "fill_parent"
+        android:layout_height="2dp"
+        android:layout_centerVertical ="true"
+        android:layout_below="@+id/link_social_media"/>
+
+    <LinearLayout
+        android:id="@+id/join"
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:orientation="horizontal"
+        android:layout_below="@+id/separator6">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_assignment_ind_black_24dp"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1.7"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Interested in joining?"
+            android:layout_weight="3.5"
+            style="@style/defaultTitle"
+            android:layout_gravity="center_vertical"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:src="@drawable/ic_chevron"
+            android:layout_weight="1"/>
+    </LinearLayout>
+
+    <View android:id="@+id/separator7"
+        android:background="@color/separator"
+        android:layout_width = "fill_parent"
+        android:layout_height="2dp"
+        android:layout_centerVertical ="true"
+        android:layout_below="@+id/join"/>
+
+    <LinearLayout
+        android:id="@+id/more"
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:orientation="horizontal"
+        android:layout_below="@+id/separator7">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_settings_black_24dp"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1.7"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="More Settings            "
+            android:layout_weight="3.5"
+            style="@style/defaultTitle"
+            android:layout_gravity="center_vertical"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:src="@drawable/ic_chevron"
+            android:layout_weight="1"/>
+    </LinearLayout>
+
+
+
 
 
 
