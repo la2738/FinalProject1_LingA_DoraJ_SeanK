@@ -23,7 +23,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Log in or Sign Up        "
+            android:text="Log in or Sign Up   "
             android:layout_weight="3.5"
             style="@style/defaultTitle"
             android:layout_gravity="center_vertical"/>
@@ -62,7 +62,7 @@
             android:layout_height="wrap_content"
             android:text="Liked and Bookmarks"
             android:layout_weight="3.5"
-            style="@style/defaultTitle"
+            style="@style/cardTitle"
             android:layout_gravity="center_vertical"/>
 
         <ImageView
@@ -99,7 +99,7 @@
             android:layout_height="wrap_content"
             android:text="Creations and Posts"
             android:layout_weight="3.5"
-            style="@style/defaultTitle"
+            style="@style/cardTitle"
             android:layout_gravity="center_vertical"/>
 
         <ImageView
@@ -136,7 +136,7 @@
             android:layout_height="wrap_content"
             android:text="Notification Setting"
             android:layout_weight="3.5"
-            style="@style/defaultTitle"
+            style="@style/cardTitle"
             android:layout_gravity="center_vertical"/>
 
         <ImageView
@@ -173,7 +173,7 @@
             android:layout_height="wrap_content"
             android:text="History                       "
             android:layout_weight="3.5"
-            style="@style/defaultTitle"
+            style="@style/cardTitle"
             android:layout_gravity="center_vertical"/>
 
         <ImageView
@@ -210,7 +210,7 @@
             android:layout_height="wrap_content"
             android:text="Link Social Media      "
             android:layout_weight="3.5"
-            style="@style/defaultTitle"
+            style="@style/cardTitle"
             android:layout_gravity="center_vertical"/>
 
         <ImageView
@@ -247,7 +247,7 @@
             android:layout_height="wrap_content"
             android:text="Interested in joining?"
             android:layout_weight="3.5"
-            style="@style/defaultTitle"
+            style="@style/cardTitle"
             android:layout_gravity="center_vertical"/>
 
         <ImageView
@@ -284,7 +284,7 @@
             android:layout_height="wrap_content"
             android:text="More Settings            "
             android:layout_weight="3.5"
-            style="@style/defaultTitle"
+            style="@style/cardTitle"
             android:layout_gravity="center_vertical"/>
 
         <ImageView
@@ -294,10 +294,5 @@
             android:src="@drawable/ic_chevron"
             android:layout_weight="1"/>
     </LinearLayout>
-
-
-
-
-
 
 </RelativeLayout>
