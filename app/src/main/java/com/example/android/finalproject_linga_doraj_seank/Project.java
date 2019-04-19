@@ -5,11 +5,14 @@ public class Project {
     public int level;
     public int time;
     public int rating;
+    public int photoID;
 
-    public Project(int name, int level, int time) {
+    public Project(int name, int level, int time, int rating, int photoID) {
         this.name = name;
         this.level = level;
         this.time = time;
+        this.photoID = photoID;
+        this.rating = rating;
     }
 
     public Project(){
@@ -38,12 +41,5 @@ public class Project {
 
     public void setTime(int time) {
         this.time = time;
-    }
-
-    public String toString() {
-        return "Project name:" + name +
-                "\n level: " + level +
-                "\n time: " + time +
-                "\n rating: " + rating;
     }
 }
