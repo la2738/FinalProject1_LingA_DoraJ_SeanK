@@ -23,6 +23,6 @@
     <string name="drying_rack_time">Estimated Time: 3 - 4 hours</string>
     <string name="pencil_box_time">Estimated Time: 10 - 20 minutes</string>
     <string name="toast_do_it">Great Choice! Let\'s Do It!</string>
-    <string name="rating_4">❤❤❤❤</string>
-    <string name="rating_5">❤❤❤❤❤</string>
+    <string name="rating_4">Rating: ❤❤❤❤</string>
+    <string name="rating_5">Rating: ❤❤❤❤❤</string>
 </resources>
