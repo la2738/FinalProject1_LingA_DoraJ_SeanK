@@ -1,9 +1,250 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorAccent"
+    android:orientation="vertical"
     tools:context=".UserDevelopmentActivity">
 
-</android.support.constraint.ConstraintLayout>
+    <TextView
+        style="@style/defaultTitle"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:background="@color/background"
+        android:gravity="center_vertical"
+        android:text="    Setting up your profile" />
+
+    <View android:id="@+id/profile_separator1"
+        android:layout_width = "fill_parent"
+        android:layout_height="2dp"
+        android:layout_centerVertical ="true"
+        android:background="@color/separator"/>
+
+    <TextView
+        style="@style/cardTitle"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="     ☛   I am a "/>
+
+
+    <RadioGroup
+        android:id="@+id/ownership_radio_group"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="90dp">
+
+        <RadioButton
+            android:id="@+id/sfho"
+            style="@style/cardParagraph"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="    signle family home owner" />
+
+        <RadioButton
+            android:id="@+id/cho"
+            style="@style/cardParagraph"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="    condo home owner" />
+
+        <RadioButton
+            android:id="@+id/renter"
+            style="@style/cardParagraph"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="    apartment renter" />
+    </RadioGroup>
+
+    <TextView
+        style="@style/cardTitle"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="     ☛   My DIY experience is "/>
+
+
+    <RadioGroup
+        android:id="@+id/experience_radio_group"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="90dp">
+
+        <RadioButton
+            android:id="@+id/profile_beginner"
+            style="@style/cardParagraph"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="    beginner" />
+
+        <RadioButton
+            android:id="@+id/profile_intermediate"
+            style="@style/cardParagraph"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="    intermediate" />
+
+        <RadioButton
+            android:id="@+id/profile_advanced"
+            style="@style/cardParagraph"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="    advanced" />
+    </RadioGroup>
+
+    <TextView
+        style="@style/cardTitle"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="     ☛   I am interested in "/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp">
+
+        <ImageView
+            android:id="@+id/kitchen_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="55dp"
+            android:src="@drawable/kitchen"
+            android:layout_alignParentLeft="true"/>
+
+        <ImageView
+            android:id="@+id/school_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="55dp"
+            android:src="@drawable/school"
+            android:layout_toRightOf="@+id/kitchen_icon"/>
+
+        <ImageView
+            android:id="@+id/garden_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="55dp"
+            android:src="@drawable/garden"
+            android:layout_toRightOf="@+id/school_icon"/>
+
+        <ImageView
+            android:id="@+id/appliance_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="55dp"
+            android:src="@drawable/appliance"
+            android:layout_toRightOf="@+id/garden_icon"/>
+
+        <ImageView
+            android:id="@+id/crafts_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="55dp"
+            android:src="@drawable/crafts"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/kitchen_checkbox"/>
+
+        <ImageView
+            android:id="@+id/painting_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="55dp"
+            android:src="@drawable/painting"
+            android:layout_toRightOf="@+id/crafts_icon"
+            android:layout_below="@+id/school_checkbox"/>
+
+        <ImageView
+            android:id="@+id/bathroom_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="55dp"
+            android:layout_weight="1"
+            android:src="@drawable/bathroom"
+            android:layout_toRightOf="@+id/painting_icon"
+            android:layout_below="@+id/school_checkbox"/>
+
+        <ImageView
+            android:id="@+id/organization_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="55dp"
+            android:src="@drawable/organization"
+            android:layout_weight="1"
+            android:layout_below="@+id/school_checkbox"
+            android:layout_toRightOf="@+id/bathroom_icon"/>
+
+        <CheckBox
+            android:id="@+id/kitchen_checkbox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="35dp"
+            android:layout_marginBottom="10dp"
+            android:layout_below="@+id/kitchen_icon"/>
+
+        <CheckBox
+            android:id="@+id/school_checkbox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/school_icon"
+            android:layout_marginHorizontal="34dp"
+            android:layout_marginBottom="10dp"
+            android:layout_toRightOf="@+id/kitchen_checkbox"/>
+
+        <CheckBox
+            android:id="@+id/garden_checkbox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/garden_icon"
+            android:layout_marginHorizontal="30dp"
+            android:layout_marginBottom="10dp"
+            android:layout_toRightOf="@+id/school_checkbox"/>
+
+        <CheckBox
+            android:id="@+id/appliance_checkbox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/kitchen_icon"
+            android:layout_marginHorizontal="39dp"
+            android:layout_marginBottom="10dp"
+            android:layout_toRightOf="@+id/garden_checkbox"/>
+
+        <CheckBox
+            android:id="@+id/crafts_checkbox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="35dp"
+            android:layout_marginBottom="10dp"
+            android:layout_below="@+id/crafts_icon"/>
+
+        <CheckBox
+            android:id="@+id/painting_checkbox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="34dp"
+            android:layout_marginBottom="10dp"
+            android:layout_below="@+id/painting_icon"
+            android:layout_toRightOf="@+id/crafts_checkbox"/>
+
+        <CheckBox
+            android:id="@+id/bathroom_checkbox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/bathroom_icon"
+            android:layout_marginHorizontal="33dp"
+            android:layout_marginBottom="10dp"
+            android:layout_toRightOf="@+id/painting_checkbox"/>
+
+        <CheckBox
+            android:id="@+id/organization_checkbox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/organization_icon"
+            android:layout_marginHorizontal="35dp"
+            android:layout_marginBottom="10dp"
+            android:layout_toRightOf="@+id/bathroom_checkbox"/>
+
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/button_save_profile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_gravity="center_horizontal"
+        android:text="Save"
+        style="@style/defaultTitle"
+        android:background="@color/background"/>
+
+
+</LinearLayout>

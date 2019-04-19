@@ -1,27 +1,17 @@
 package com.example.android.finalproject_linga_doraj_seank;
 
 public class User {
-    String userName;
     String userHomeOwnership;
     String userDIYExperience;
     String userInterests;
 
-    public User(String userName, String userHomeOwnership, String userDIYExperience, String userInterests) {
-        this.userName = userName;
+    public User(String userHomeOwnership, String userDIYExperience, String userInterests) {
         this.userHomeOwnership = userHomeOwnership;
         this.userDIYExperience = userDIYExperience;
         this.userInterests = userInterests;
     }
 
     public User() {
-    }
-
-    public String getUserName() {
-        return userName;
-    }
-
-    public void setUserName(String userName) {
-        this.userName = userName;
     }
 
     public String getUserHomeOwnership() {

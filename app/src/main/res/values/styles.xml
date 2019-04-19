@@ -12,6 +12,7 @@
         <item name="android:textColor">@color/colorPrimaryDark</item>
         <item name="android:fontFamily">sans-serif-light</item>
         <item name="android:textSize">20sp</item>
+        <item name="android:gravity">center_vertical</item>
     </style>
 
     <style name="defaultTitle">
@@ -24,12 +25,14 @@
         <item name="android:textColor">@color/colorPrimaryDark</item>
         <item name="android:fontFamily">sans-serif</item>
         <item name="android:textSize">19sp</item>
+        <item name="android:gravity">center_vertical</item>
     </style>
 
     <style name="cardParagraph">
         <item name="android:textColor">@color/colorPrimaryDark</item>
         <item name="android:fontFamily">sans-serif-light</item>
         <item name="android:textSize">16sp</item>
+        <item name="android:gravity">center_vertical</item>
     </style>
 
 </resources>
