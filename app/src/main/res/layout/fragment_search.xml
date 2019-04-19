@@ -32,7 +32,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/frame_layout"
-        android:paddingHorizontal="40dp"
+        android:paddingHorizontal="20dp"
         android:layout_marginTop="20dp">
 
         <ImageView
@@ -65,7 +65,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/line1"
-        android:paddingHorizontal="40dp"
+        android:paddingHorizontal="20dp"
         android:layout_marginTop="10dp">
 
         <ImageView
