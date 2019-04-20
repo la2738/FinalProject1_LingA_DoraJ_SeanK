@@ -1,11 +1,13 @@
 package com.example.android.finalproject_linga_doraj_seank;
 
+import java.util.ArrayList;
+
 public class User {
     String userHomeOwnership;
     String userDIYExperience;
-    String userInterests;
+    ArrayList<String> userInterests;
 
-    public User(String userHomeOwnership, String userDIYExperience, String userInterests) {
+    public User(String userHomeOwnership, String userDIYExperience, ArrayList<String> userInterests) {
         this.userHomeOwnership = userHomeOwnership;
         this.userDIYExperience = userDIYExperience;
         this.userInterests = userInterests;
@@ -30,11 +32,11 @@ public class User {
         this.userDIYExperience = userDIYExperience;
     }
 
-    public String getUserInterests() {
+    public ArrayList<String> getUserInterests() {
         return userInterests;
     }
 
-    public void setUserInterests(String userInterests) {
+    public void setUserInterests(ArrayList<String> userInterests) {
         this.userInterests = userInterests;
     }
 }

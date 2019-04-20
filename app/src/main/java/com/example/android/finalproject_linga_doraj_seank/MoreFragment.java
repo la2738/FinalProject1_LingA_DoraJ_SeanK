@@ -78,6 +78,8 @@ public class MoreFragment extends Fragment {
                 };
                 mFirebaseAuth.addAuthStateListener(mAuthStateListener);
 
+                Intent intent = new Intent(getContext(), UserDevelopmentActivity.class);
+                startActivity(intent);
             }
         });
 
