@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "367743321531",
+    "firebase_url": "https://diy-home-hacks.firebaseio.com",
+    "project_id": "diy-home-hacks",
+    "storage_bucket": "diy-home-hacks.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:367743321531:android:1b0e0d07d7536411",
+        "android_client_info": {
+          "package_name": "com.example.android.finalproject_linga_doraj_seank"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "367743321531-phauafkhtios819qel826dqdnv4ouobm.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.android.finalproject_linga_doraj_seank",
+            "certificate_hash": "679785bbb10f783edcd95b72ca7cd51fde65e2b1"
+          }
+        },
+        {
+          "client_id": "367743321531-3eqpq5uhaaun4m6cns0t7bgglsc2ofrs.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDJiXyjd3o0Fi3IfA-3u3Om8yqqnQcXrp8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "367743321531-3eqpq5uhaaun4m6cns0t7bgglsc2ofrs.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

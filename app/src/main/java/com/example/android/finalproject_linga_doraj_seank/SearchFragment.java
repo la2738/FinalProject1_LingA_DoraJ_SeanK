@@ -1,5 +1,7 @@
 package com.example.android.finalproject_linga_doraj_seank;
 
+import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -13,23 +15,45 @@ import android.view.ViewGroup;
 import java.util.ArrayList;
 import java.util.List;
 
+import android.widget.AutoCompleteTextView;
+import android.widget.ArrayAdapter;
+import android.widget.SearchView;
+
 public class SearchFragment extends Fragment {
+    private SearchView searchView;
 
     private List<Project> projects;
-
+    //String[] fruits = {"Apple", "ABC", "APP", "Banana", "Cherry", "Date", "Grape", "Kiwi", "Mango", "Pear"};
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_search, container, false);
 
         initialData();
+
+       /* ArrayAdapter<String> adapter = new ArrayAdapter<String>(getContext(), android.R.layout.select_dialog_item, fruits);
+        AutoCompleteTextView actv = rootView.findViewById(R.id.input);
+        actv.setAdapter(adapter);
+        actv.setThreshold(1);*/
+
         RecyclerView recyclerView = (RecyclerView) rootView.findViewById(R.id.recycler_view);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         recyclerView.setAdapter(new ProjectsAdapter(projects, getContext()));
 
+
+
+        searchView = (SearchView)rootView.findViewById(R.id.search_view);
+        searchView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(),SearchActivity.class);
+                startActivity(intent);
+            }
+        });
         return rootView;
     }
+
 
     private void initialData(){
         projects = new ArrayList<>();
