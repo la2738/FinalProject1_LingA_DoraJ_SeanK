@@ -2,8 +2,8 @@ package com.example.android.finalproject_linga_doraj_seank;
 
 import android.content.Context;
 import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,12 +12,16 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
+import com.google.firebase.database.ChildEventListener;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
 
 import java.util.ArrayList;
 
+
 public class PostsAdapter extends RecyclerView.Adapter<PostsAdapter.ViewHolder> {
 
-    private static final String TAG = "PostsAdapter";
     private ArrayList<Post> posts;
     private Context context;
 
@@ -35,10 +39,12 @@ public class PostsAdapter extends RecyclerView.Adapter<PostsAdapter.ViewHolder> 
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder viewHolder, int i) {
-        Log.d(TAG, "onBindViewHolder:called.");
 
         RequestOptions requestOptions = new RequestOptions().placeholder(R.drawable.ic_launcher_background);
-        Glide.with(context).load(posts.get(i).photoUrl).apply(requestOptions).into(viewHolder.image);
+        Glide.with(context)
+                .load(posts.get(i).photoUrl)
+                .apply(requestOptions)
+                .into(viewHolder.image);
 
         viewHolder.title.setText(posts.get(i).title);
         viewHolder.author.setText(posts.get(i).author);
@@ -49,6 +55,39 @@ public class PostsAdapter extends RecyclerView.Adapter<PostsAdapter.ViewHolder> 
     @Override
     public int getItemCount() {
         return posts.size();
+    }
+
+    public PostsAdapter (DatabaseReference postsRef, Context context){
+        this.context = context;
+        posts = new ArrayList<>();
+        postsRef.addChildEventListener(new ChildEventListener() {
+            @Override
+            public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
+                Post p = dataSnapshot.getValue(Post.class);
+                posts.add(p);
+                notifyDataSetChanged();
+            }
+
+            @Override
+            public void onChildChanged(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
+
+            }
+
+            @Override
+            public void onChildRemoved(@NonNull DataSnapshot dataSnapshot) {
+
+            }
+
+            @Override
+            public void onChildMoved(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder{

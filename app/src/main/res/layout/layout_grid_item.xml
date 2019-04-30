@@ -4,8 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_marginTop="5dp"
-    android:background="@color/colorAccent">
+    android:layout_margin="5dp">
 
     <android.support.v7.widget.CardView
         android:layout_width="match_parent"
@@ -16,7 +15,9 @@
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:padding="5dp"
+            android:background="@color/background">
 
             <ImageView
                 android:id="@+id/post_image"
@@ -32,24 +33,25 @@
                 android:text="@string/painting_hack_title"
                 android:layout_below="@id/post_image"
                 android:layout_marginTop="8dp"
-                style="@style/cardParagraph"/>
+                style="@style/post_title"/>
 
             <TextView
                 android:id="@+id/post_author"
-                android:layout_width="wrap_content"
+                style="@style/card_info_author"
+                android:layout_width="100dp"
                 android:layout_height="wrap_content"
-                android:text="@string/painting_author"
-                style="@style/cardParagraph"
                 android:layout_below="@+id/post_title"
-                android:layout_marginTop="3dp"/>
+                android:layout_marginTop="3dp"
+                android:text="@string/painting_author" />
 
             <TextView
                 android:id="@+id/post_likes"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/painting_likes"
-                style="@style/cardParagraph"
-                android:layout_alignParentEnd="true"
+                style="@style/card_info_likes"
+                android:layout_marginLeft="20dp"
+                android:layout_alignParentRight="true"
                 android:layout_toRightOf="@+id/post_author"
                 android:layout_below="@+id/post_title"/>
 

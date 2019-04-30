@@ -1,13 +1,157 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent" android:layout_height="match_parent"
-    android:background="@color/colorAccent">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/colorAccent"
+    android:orientation="vertical">
+
+    <!-- Search Box -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp">
+
+        <AutoCompleteTextView
+
+            android:id="@+id/autocompleteTextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_weight="1"
+            />
+
+        <ImageView
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:src="@drawable/ic_search"
+            android:layout_gravity="center"
+            />
+
+
+    </LinearLayout>
+
+    <!-- Labels -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="4dp"
+        android:paddingBottom="8dp"
+        android:paddingLeft="16dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btnRetailStore"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_gravity="center"
+            android:background="@drawable/button_border"
+            android:foreground="?attr/selectableItemBackground"
+            android:gravity="center"
+            android:textAllCaps="false"
+            android:padding="4dp"
+            android:text="Retail Store"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="16sp"
+            android:layout_marginRight="8dp"/>
+
+        <Button
+            android:id="@+id/btnHandyMan"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_gravity="center"
+            android:background="@drawable/button_border"
+            android:foreground="?attr/selectableItemBackground"
+            android:gravity="center"
+            android:textAllCaps="false"
+            android:padding="4dp"
+            android:text="HandyMan"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="16sp"
+            android:layout_marginRight="8dp"/>
+
+        <Button
+            android:id="@+id/btnDIY"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_gravity="center"
+            android:background="@drawable/button_border"
+            android:foreground="?attr/selectableItemBackground"
+            android:gravity="center"
+            android:textAllCaps="false"
+            android:padding="4dp"
+            android:text="DIY Workshop"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="16sp"
+            android:layout_marginRight="8dp"/>
+
+        <Button
+            android:id="@+id/btnMore"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_gravity="center"
+            android:background="@drawable/button_border"
+            android:foreground="?attr/selectableItemBackground"
+            android:gravity="center"
+            android:textAllCaps="false"
+            android:padding="4dp"
+            android:text="More"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="16sp"
+            android:layout_marginRight="8dp"/>
+
+        <!--<android.support.v7.widget.AppCompatButton-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:text="Retail Store"-->
+
+            />
+        <!--<TextView-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:text="Retail Store"-->
+            <!--android:layout_marginRight="16dp"-->
+            <!--/>-->
+
+        <!--<TextView-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:text="HandyMan"-->
+            <!--android:layout_marginRight="16dp"-->
+            <!--/>-->
+
+        <!--<TextView-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:text="DIY Workshop"-->
+            <!--android:layout_marginRight="16dp"-->
+            <!--/>-->
+
+        <!--<TextView-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:text="MORE"-->
+            <!--/>-->
+
+    </LinearLayout>
     <fragment xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:map="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
         android:id="@+id/map1"
         android:name="com.google.android.gms.maps.SupportMapFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        map:cameraZoom="13"
+        map:mapType="normal"
+        map:uiCompass="false"
+        map:uiRotateGestures="true"
+        map:uiScrollGestures="true"
+        map:uiTiltGestures="true"
+        map:uiZoomControls="true"
+        map:uiZoomGestures="true"
         tools:context="com.example.android.finalproject_linga_doraj_seank.NearbyFragment"/>
 
-</RelativeLayout>
+</LinearLayout>
