@@ -6,9 +6,16 @@
     android:orientation="vertical"
     tools:context=".MakePencilBoxActivity"
     android:background="@color/colorAccent">
-    <VideoView
+    <!--<VideoView-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="250dp" />-->
+
+    <view
+        android:id="@+id/youtubePlayer"
+        class="com.google.android.youtube.player.YouTubePlayerView"
         android:layout_width="match_parent"
-        android:layout_height="250dp" />
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp" />
 
 
     <ScrollView
