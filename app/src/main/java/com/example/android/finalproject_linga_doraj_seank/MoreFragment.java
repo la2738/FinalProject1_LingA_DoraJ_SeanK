@@ -1,6 +1,5 @@
 package com.example.android.finalproject_linga_doraj_seank;
 
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -33,8 +32,6 @@ public class MoreFragment extends Fragment {
     private FirebaseAuth.AuthStateListener mAuthStateListener;
     private TextView userStatus;
     private LinearLayout loginStrip;
-
-    private Context context ;
 
     @Nullable
     @Override
@@ -87,31 +84,6 @@ public class MoreFragment extends Fragment {
         });
 
         return rootView;
-    }
-
-    @Override
-    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
-        super.onViewCreated(view, savedInstanceState);
-
-        view.findViewById(R.id.liked).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(context, VideoActivity.class);
-                startActivity(intent);
-            }
-        });
-    }
-
-    @Override
-    public void onAttach(Context context) {
-        super.onAttach(context);
-        this.context = context ;
-    }
-
-    @Override
-    public void onDetach() {
-        super.onDetach();
-        this.context = null ;
     }
 
     @Override

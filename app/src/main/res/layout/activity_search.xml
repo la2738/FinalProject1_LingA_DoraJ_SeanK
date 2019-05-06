@@ -9,29 +9,33 @@
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:maxLines="1"
+        android:layout_marginTop="10dp"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
+        android:layout_marginBottom="10dp"
         android:completionThreshold="1"
-        android:hint="Select a topic" />
+        style="@style/defaultText"
+        android:hint="Select a topic"
+        />
 
     <View
         android:id="@+id/project_garden"
         android:background="@color/separator"
         android:layout_width = "fill_parent"
-        android:layout_height="8dp"
+        android:layout_height="2dp"
         android:layout_centerVertical ="true"
-        android:layout_below="@+id/login_strip"/>
+        android:layout_below="@+id/garden"/>
 
     <LinearLayout
         android:id="@+id/garden"
         android:layout_width="match_parent"
-        android:layout_height="65dp"
+        android:layout_height="45dp"
         android:orientation="horizontal"
         android:layout_below="@+id/actv">
 
         <ImageView
             android:layout_width="wrap_content"
-            android:layout_height="65dp"
+            android:layout_height="35dp"
             android:src="@drawable/garden"
             android:layout_gravity="center_vertical"
             android:layout_weight="1.7"/>
@@ -40,7 +44,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="GARDEN"
-            android:textSize="20dp"
+            style="@style/defaultText"
             android:layout_weight="3.5"
             android:layout_gravity="center_vertical"/>
 
@@ -58,13 +62,13 @@
     <LinearLayout
         android:id="@+id/appliance"
         android:layout_width="match_parent"
-        android:layout_height="65dp"
+        android:layout_height="45dp"
         android:orientation="horizontal"
         android:layout_below="@+id/project_appliance">
 
         <ImageView
             android:layout_width="wrap_content"
-            android:layout_height="55dp"
+            android:layout_height="35dp"
             android:src="@drawable/appliance"
             android:layout_gravity="center_vertical"
             android:layout_weight="1.7"/>
@@ -73,7 +77,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="APPLIANCE"
-            android:textSize="20dp"
+            style="@style/defaultText"
             android:layout_weight="3.5"
             android:layout_gravity="center_vertical"/>
 
@@ -90,13 +94,13 @@
     <LinearLayout
         android:id="@+id/painting"
         android:layout_width="match_parent"
-        android:layout_height="65dp"
+        android:layout_height="45dp"
         android:orientation="horizontal"
         android:layout_below="@+id/project_painting">
 
         <ImageView
             android:layout_width="wrap_content"
-            android:layout_height="55dp"
+            android:layout_height="35dp"
             android:src="@drawable/painting"
             android:layout_gravity="center_vertical"
             android:layout_weight="1.7"/>
@@ -105,7 +109,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="PAINTING"
-            android:textSize="20dp"
+            style="@style/defaultText"
             android:layout_weight="3.5"
             android:layout_gravity="center_vertical"/>
 
@@ -122,13 +126,13 @@
     <LinearLayout
         android:id="@+id/crafts"
         android:layout_width="match_parent"
-        android:layout_height="65dp"
+        android:layout_height="45dp"
         android:orientation="horizontal"
         android:layout_below="@+id/project_crafts">
 
         <ImageView
             android:layout_width="wrap_content"
-            android:layout_height="55dp"
+            android:layout_height="35dp"
             android:src="@drawable/crafts"
             android:layout_gravity="center_vertical"
             android:layout_weight="1.7"/>
@@ -137,7 +141,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="CRAFTS"
-            android:textSize="20dp"
+            style="@style/defaultText"
             android:layout_weight="3.5"
             android:layout_gravity="center_vertical"/>
 
@@ -154,13 +158,13 @@
     <LinearLayout
         android:id="@+id/bathroom"
         android:layout_width="match_parent"
-        android:layout_height="65dp"
+        android:layout_height="45dp"
         android:orientation="horizontal"
         android:layout_below="@+id/project_bathroom">
 
         <ImageView
             android:layout_width="wrap_content"
-            android:layout_height="55dp"
+            android:layout_height="35dp"
             android:src="@drawable/bathroom"
             android:layout_marginLeft="5dp"
             android:layout_gravity="center_vertical"
@@ -172,7 +176,7 @@
             android:layout_gravity="center_vertical"
             android:layout_weight="3.5"
             android:text="BATHROOM"
-            android:textSize="20dp" />
+            style="@style/defaultText" />
     </LinearLayout>
 
     <View
@@ -186,13 +190,13 @@
     <LinearLayout
         android:id="@+id/school"
         android:layout_width="match_parent"
-        android:layout_height="65dp"
+        android:layout_height="45dp"
         android:orientation="horizontal"
         android:layout_below="@+id/project_school">
 
         <ImageView
             android:layout_width="wrap_content"
-            android:layout_height="55dp"
+            android:layout_height="35dp"
             android:src="@drawable/school"
             android:layout_gravity="center_vertical"
             android:layout_weight="1.7"/>
@@ -201,7 +205,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="SCHOOL"
-            android:textSize="20dp"
+            style="@style/defaultText"
             android:layout_weight="3.5"
             android:layout_gravity="center_vertical"/>
 
@@ -217,13 +221,13 @@
     <LinearLayout
         android:id="@+id/kitchen"
         android:layout_width="match_parent"
-        android:layout_height="65dp"
+        android:layout_height="45dp"
         android:orientation="horizontal"
         android:layout_below="@+id/project_kitchen">
 
         <ImageView
             android:layout_width="wrap_content"
-            android:layout_height="55dp"
+            android:layout_height="35dp"
             android:src="@drawable/kitchen"
             android:layout_gravity="center_vertical"
             android:layout_weight="1.7"/>
@@ -232,7 +236,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="KITCHEN"
-            android:textSize="20dp"
+            style="@style/defaultText"
             android:layout_weight="3.5"
             android:layout_gravity="center_vertical"/>
 
@@ -248,13 +252,13 @@
     <LinearLayout
         android:id="@+id/organization"
         android:layout_width="match_parent"
-        android:layout_height="65dp"
+        android:layout_height="45dp"
         android:orientation="horizontal"
         android:layout_below="@+id/project_organization">
 
         <ImageView
             android:layout_width="wrap_content"
-            android:layout_height="55dp"
+            android:layout_height="35dp"
             android:layout_marginLeft="10dp"
             android:src="@drawable/organization"
             android:layout_gravity="center_vertical"
@@ -264,12 +268,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="ORGANIZATION"
-            android:textSize="20dp"
+            style="@style/defaultText"
             android:layout_weight="3.5"
             android:layout_gravity="center_vertical"/>
 
     </LinearLayout>
-
 </RelativeLayout>
 
 

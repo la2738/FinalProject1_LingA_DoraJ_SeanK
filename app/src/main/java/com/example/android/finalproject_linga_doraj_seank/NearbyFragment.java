@@ -20,7 +20,6 @@ import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Toast;
 
-import com.example.android.finalproject_linga_doraj_seank.models.PlaceItem;
 import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.maps.CameraUpdate;
@@ -58,7 +57,6 @@ public class NearbyFragment extends Fragment implements OnMapReadyCallback , Vie
     private List<Marker> markers ;
 
     private void InitMap() {
-//        mapFragment =
     }
 
     @Nullable
@@ -108,10 +106,6 @@ public class NearbyFragment extends Fragment implements OnMapReadyCallback , Vie
     public void onMapReady(GoogleMap googleMap) {
         map = googleMap;
         markers = new ArrayList<>();    //initialize
-//
-//        LatLng sydney = new LatLng(-34, 151);
-//        map.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
-//        map.moveCamera(CameraUpdateFactory.newLatLngZoom(sydney, currentZoom));
     }
 
     @Override
@@ -160,9 +154,6 @@ public class NearbyFragment extends Fragment implements OnMapReadyCallback , Vie
         }
     }
 
-    /**
-     * ref : https://medium.com/@droidbyme/get-current-location-using-fusedlocationproviderclient-in-android-cb7ebf5ab88e
-     */
     private void getCurrentLocation() {
         // check permission
         if (ActivityCompat.checkSelfPermission(context, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED
@@ -198,7 +189,7 @@ public class NearbyFragment extends Fragment implements OnMapReadyCallback , Vie
 
 
     private void setupSearchBox() {
-        List<String> names = new ArrayList<>(); //所有地點的名稱集合，用來給 search box 的 auto complete menus。
+        List<String> names = new ArrayList<>();
         for (PlaceItem p : this.placeList) {
             names.add(p.getName());
         }
@@ -215,9 +206,9 @@ public class NearbyFragment extends Fragment implements OnMapReadyCallback , Vie
 
         // Set the adapter for data as a list
         autoCompleteTextView.setAdapter(adapter);
-//        autoCompleteTextView.setTextColor(Color.BLACK);
 
-        // 當使用者選取某個地點時
+
+
         autoCompleteTextView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
@@ -234,10 +225,7 @@ public class NearbyFragment extends Fragment implements OnMapReadyCallback , Vie
         });
     }
 
-    /**
-     * 根據類別顯示
-     * @param label
-     */
+
     private void showLabels(String label) {
         List<PlaceItem> result = new ArrayList<>();
         for(PlaceItem pi : placeList) {
@@ -248,22 +236,19 @@ public class NearbyFragment extends Fragment implements OnMapReadyCallback , Vie
         showMarkers(result);
     }
 
-    /**
-     * 顯示指定的地點
-     * @param places
-     */
+
     private void showMarkers(List<PlaceItem> places) {
         this.clearAllMarkers();
 
-        if (places.size() == 0) {   //如果沒有符合的點，直接跳出
+        if (places.size() == 0) {
             return ;
-        } else if (places.size() == 1) {   //如果只有一個點，則顯示，且 zoom 在 16
+        } else if (places.size() == 1) {
             PlaceItem pi = places.get(0);
             Marker marker = map.addMarker(new MarkerOptions().position(pi.getLatLng()).title(pi.getName()));
             markers.add(marker);
             map.moveCamera(CameraUpdateFactory.newLatLngZoom(marker.getPosition(), 16));
         }
-        else {  //如果多個點，則自動調整 zoom 讓所有 marker 都能放進去
+        else {
             LatLngBounds.Builder builder = new LatLngBounds.Builder();
 
             for(PlaceItem pi : places) {
@@ -301,6 +286,10 @@ public class NearbyFragment extends Fragment implements OnMapReadyCallback , Vie
         placeList.add(new PlaceItem("The Home Depot-Manhattan West 23rd Street", 40.761837, -73.966938 , RETAIL_STORE ));
         placeList.add(new PlaceItem("The Home Depot-Bronx Terminal", 40.825766, -73.930170 , RETAIL_STORE ));
         placeList.add(new PlaceItem("The Home Depot-Secaucus", 40.785353, -74.049820 , RETAIL_STORE ));
+        placeList.add(new PlaceItem("Lowe's HomeImprovement-North Bergen",40.812131, -74.019559, RETAIL_STORE));
+        placeList.add(new PlaceItem("Lowe's HomeImprovement-Gowanus",40.677233, -73.993579, RETAIL_STORE));
+        placeList.add(new PlaceItem("Lowe's HomeImprovement-Carlstadt",40.834585, -74.090554, RETAIL_STORE));
+        placeList.add(new PlaceItem("Costco Wholesale-East Harlem",40.800007, -73.931344, RETAIL_STORE));
 
         placeList.add(new PlaceItem("NYC 24/7 HandyMan", 40.806941, -73.957456 , HANDMAN ));
         placeList.add(new PlaceItem("Accurate Handyman & Construction", 40.804820, -73.967218 , HANDMAN ));
@@ -309,6 +298,4 @@ public class NearbyFragment extends Fragment implements OnMapReadyCallback , Vie
         placeList.add(new PlaceItem("City Tech College Continuing Education- Classes include basic home repair and basic plumbing", 40.699517, -73.985974 , DIY_WORDSHOP ));
         placeList.add(new PlaceItem("Bronx Community College- Classes include basic boiler care and lock repair", 40.858366, -73.912740 , DIY_WORDSHOP ));
     }
-
-
 }

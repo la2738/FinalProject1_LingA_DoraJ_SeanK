@@ -27,16 +27,6 @@
             app:queryHint="Search for Projects"
             android:background="@color/colorAccent"/>
 
-        <!--<AutoCompleteTextView
-            android:id="@+id/input"
-            android:layout_width="wrap_content"
-            android:layout_height="35dp"
-            android:layout_below="@+id/textView"
-            android:layout_gravity="top|center_horizontal"
-            android:layout_marginTop="120dp"
-            android:background="@color/colorAccent"
-            android:ems="10"
-            app:queryHint="Search for Projects" />-->
     </FrameLayout>
 
     <LinearLayout
@@ -132,8 +122,5 @@
         android:layout_marginVertical="4dp">
 
     </android.support.v7.widget.RecyclerView>
-
-
-
 
 </RelativeLayout>

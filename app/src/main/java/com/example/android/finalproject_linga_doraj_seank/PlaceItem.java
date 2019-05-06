@@ -1,13 +1,9 @@
-package com.example.android.finalproject_linga_doraj_seank.models;
+package com.example.android.finalproject_linga_doraj_seank;
 
 import com.google.android.gms.maps.model.LatLng;
 
-/**
- *
- */
 public class PlaceItem {
-
-    private String name ;   //the name of this place
+    private String name ;
     private double lat ;
     private double lng ;
     private String label ;

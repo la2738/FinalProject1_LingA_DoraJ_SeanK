@@ -23,18 +23,12 @@ public class SearchFragment extends Fragment {
     private SearchView searchView;
 
     private List<Project> projects;
-    //String[] fruits = {"Apple", "ABC", "APP", "Banana", "Cherry", "Date", "Grape", "Kiwi", "Mango", "Pear"};
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_search, container, false);
 
         initialData();
-
-       /* ArrayAdapter<String> adapter = new ArrayAdapter<String>(getContext(), android.R.layout.select_dialog_item, fruits);
-        AutoCompleteTextView actv = rootView.findViewById(R.id.input);
-        actv.setAdapter(adapter);
-        actv.setThreshold(1);*/
 
         RecyclerView recyclerView = (RecyclerView) rootView.findViewById(R.id.recycler_view);
         recyclerView.setHasFixedSize(true);

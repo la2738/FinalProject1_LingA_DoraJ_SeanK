@@ -30,6 +30,9 @@
     <string name="screen_iphone_time">Estimated Time: 6 - 15 minutes</string>
     <string name="drying_rack_time">Estimated Time: 3 - 4 hours</string>
     <string name="pencil_box_time">Estimated Time: 10 - 20 minutes</string>
+    <string name="pencil_box_tool">Tools: Sharpie, Glue gun,Green Scissors, Spray paint, Washi Tape, Purple Scissors</string>
+    <string name="pencil_box_tips">Tips: Be careful when kids are using scissors and hot glue. Use ruler to help you fold, so you can have straight lines. Keep pressing until hot glue cools down.</string>
+
 
     <string name="CatTree_time">Estimated Time: 2 - 3 hours</string>
     <string name="pan_time">Estimated Time: 10 - 15 minutes</string>
@@ -44,6 +47,5 @@
     <string name="painting_hack_title">11 Little Known Painting Hacks from Expert Field Editors</string>
     <string name="painting_author">👤FamilyHandymen</string>
     <string name="painting_likes">♡ 5.5K</string>
-    <string name="title_activity_video">VideoActivity</string>
 
 </resources>
