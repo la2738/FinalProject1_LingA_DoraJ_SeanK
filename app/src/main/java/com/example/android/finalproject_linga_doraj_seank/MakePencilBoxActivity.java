@@ -21,6 +21,7 @@ import com.google.android.youtube.player.YouTubeBaseActivity;
 import com.google.android.youtube.player.YouTubeInitializationResult;
 import com.google.android.youtube.player.YouTubePlayer;
 import com.google.android.youtube.player.YouTubePlayerView;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -42,63 +43,46 @@ public class MakePencilBoxActivity extends YouTubeBaseActivity  {
     private YouTubePlayer.OnInitializedListener mOnInitializedListener ;
 
     private Button btnSend ;
-    private String rootNodeName = "comments";
     private EditText txtContent ;
     private ListView messageListView;
     private List<CommentInfo> comments ;
-    private CommentArrayAdapter adapter ;
+    private EditText commentInput;
 
-    private DatabaseReference refRoot;
+    private DatabaseReference commentRef;
+    private FirebaseDatabase mFirebaseDatabase;
+    private FirebaseAuth mFirebaseAuth;
+    private CommentAdapter mCommentAdapter;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_make_pencil_box);
 
-//        Intent i = getIntent();
         this.mYouTubePlayerView = (YouTubePlayerView)findViewById(R.id.youtubePlayer);
         initYouTubePlayer();
 
+        btnSend = (Button)findViewById(R.id.sendButton);
+        txtContent = (EditText)findViewById(R.id.messageEditText) ;
+        comments = new ArrayList<>();
+        messageListView = (ListView)findViewById(R.id.messageListView);
+        commentInput = (EditText)findViewById(R.id.messageEditText);
 
-        this.btnSend = (Button)findViewById(R.id.sendButton);
-//        this.btnSend.setEnabled(FirebaseAuth.getInstance().getCurrentUser() != null);
-        this.btnSend.setEnabled(true);  //for testing only
-        this.btnSend.setOnClickListener(new View.OnClickListener() {
+        mFirebaseDatabase = FirebaseDatabase.getInstance();
+        commentRef = mFirebaseDatabase.getReference().child("Comments");
+        mFirebaseAuth = FirebaseAuth.getInstance();
+        mCommentAdapter = new CommentAdapter(this,R.layout.item_message,comments);
+        messageListView.setAdapter(mCommentAdapter);
+
+        btnSend.isEnabled();
+        btnSend.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //
-//                FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-//                if (user == null) {
-//                    Snackbar.make(findViewById(android.R.id.content), "You have to sign in first.", Snackbar.LENGTH_LONG).show();
-//                }
-//                else {
-
-                    Editable x = txtContent.getEditableText();
-                    if (x != null) {
-                        if (Strings.isEmptyOrWhitespace(x.toString())) {
-                            Snackbar.make(findViewById(android.R.id.content), "Comment is required.", Snackbar.LENGTH_LONG).show();
-                        }
-                        else {
-                            String content = x.toString();
-                            CommentInfo cmt = new CommentInfo("kevin", content);
-                            String key = UUID.randomUUID().toString();
-                            refRoot.child(rootNodeName).child(key).setValue(cmt);
-//                            refRoot.push().child(key).setValue(cmt);
-                        }
-                    }
-//                }
+                CommentInfo commentInfo= new CommentInfo(commentInput.getText().toString(),mFirebaseAuth.getCurrentUser().getDisplayName());
+                commentRef.child(mFirebaseAuth.getCurrentUser().getDisplayName()).push().setValue(commentInfo);
             }
         });
-
-
-        this.txtContent = (EditText)findViewById(R.id.messageEditText) ;
-
-
-        this.comments = new ArrayList<>();
-        this.messageListView = (ListView)findViewById(R.id.messageListView);
-//        adapter = new CommentArrayAdapter(this);
-//        this.messageListView.setAdapter(adapter);
-
     }
 
     private void initYouTubePlayer() {
@@ -108,15 +92,13 @@ public class MakePencilBoxActivity extends YouTubeBaseActivity  {
             public void onInitializationSuccess(YouTubePlayer.Provider provider, YouTubePlayer youTubePlayer, boolean b) {
                 Log.d(TAG, "onInitializationSuccess: Done initializing .....");
 
-                youTubePlayer.loadVideo("8ainxpWPt_4"); //載入影片
+                youTubePlayer.loadVideo("8ainxpWPt_4");
 
-                 initFirebaseRealtimeDB();
             }
 
             @Override
             public void onInitializationFailure(YouTubePlayer.Provider provider, YouTubeInitializationResult youTubeInitializationResult) {
                 Log.d(TAG, "onInitializationFailure: Fail to  initialize youTube player .....");
-                // initFirebaseRealtimeDB();
             }
         };
 
@@ -125,87 +107,6 @@ public class MakePencilBoxActivity extends YouTubeBaseActivity  {
 
     }
 
-    private void initFirebaseRealtimeDB() {
-        refRoot = FirebaseDatabase.getInstance().getReference();
-//        refRoot = FirebaseDatabase.getInstance().getReference(this.rootNodeName);
-        refRoot.child(rootNodeName).addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                comments = new ArrayList<>();
-
-                for (DataSnapshot commentSnapshot : dataSnapshot.getChildren()) {
-                    // TODO: handle the post
-                    CommentInfo comment = commentSnapshot.getValue(CommentInfo.class);
-                    comments.add(comment);
-                }
-
-                if (adapter == null) {
-                    adapter = new CommentArrayAdapter(MakePencilBoxActivity.this);
-                    messageListView.setAdapter(adapter);
-                }
-                else {
-                    adapter.notifyDataSetChanged();
-                }
-
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-                Log.d(TAG, "read comments error : " + databaseError.getMessage());
-                Snackbar.make(findViewById(android.R.id.content), "read comments failed", Snackbar.LENGTH_LONG).show();
-            }
-        });
-    }
-
-    private class CommentArrayAdapter extends ArrayAdapter<CommentInfo> {
-
-        private Context context;
-
-        public CommentArrayAdapter(Context context) {
-            super(context, -1, comments);
-            this.context = context ;
-        }
-
-        @Override
-        public View getView(int position, View convertView, ViewGroup parent) {
-            LayoutInflater inflater = (LayoutInflater) context
-                    .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-            View rowView = inflater.inflate(R.layout.item_message, parent, false);
-            TextView txtMessage = (TextView) rowView.findViewById(R.id.txtMessage);
-            TextView txtName = (TextView) rowView.findViewById(R.id.txtName);
-            TextView txtTime = (TextView) rowView.findViewById(R.id.txtTime);
-
-            ImageView imageView = (ImageView) rowView.findViewById(R.id.photoImageView);
-            CommentInfo comment = comments.get(position);
-
-            txtMessage.setText(comment.content);
-            txtName.setText(comment.name);
-            txtName.setText(comment.name);
-
-            // change the icon for Windows and iPhone
-//            String s = values[position];
-            String s = comment.content ;
-            if (s.startsWith("iPhone")) {
-                //imageView.setImageResource(R.drawable.no);
-            } else {
-                //imageView.setImageResource(R.drawable.ok);
-            }
-
-            return rowView;
-        }
-
-//        @Override
-//        public long getItemId(int position) {
-//            String item = getItem(position);
-//            return mIdMap.get(item);
-//        }
-
-//        @Override
-//        public boolean hasStableIds() {
-//            return true;
-//        }
-
-    }
 
 
 }

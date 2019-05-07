@@ -11,6 +11,7 @@
 
     <ImageView
         android:id="@+id/photoImageView"
+        android:src="@drawable/ic_person"
         android:layout_width="48dp"
         android:layout_height="48dp"
         android:adjustViewBounds="true" />

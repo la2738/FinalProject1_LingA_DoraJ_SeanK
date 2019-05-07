@@ -6,16 +6,21 @@ import com.google.firebase.database.IgnoreExtraProperties;
 public class CommentInfo {
     public String name ;
     public String content;
-    public long create_at ;
 
     public CommentInfo() {
-        // Default constructor required for calls to DataSnapshot.getValue(Comment.class)
+
     }
 
     public CommentInfo(String name, String content) {
-        this.name = name ;
-        this.content = content ;
-        this.create_at = System.currentTimeMillis() ;
+        this.name = name;
+        this.content = content;
     }
 
+    public String getName() {
+        return name;
+    }
+
+    public String getContent() {
+        return content;
+    }
 }
