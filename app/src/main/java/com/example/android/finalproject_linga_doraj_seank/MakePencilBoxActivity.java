@@ -75,15 +75,14 @@ public class MakePencilBoxActivity extends YouTubeBaseActivity  {
         mFirebaseDatabase = FirebaseDatabase.getInstance();
         commentRef = mFirebaseDatabase.getReference().child("Comments");
         mFirebaseAuth = FirebaseAuth.getInstance();
-        mCommentAdapter = new CommentAdapter(this,R.layout.item_message,comments);
+        mCommentAdapter = new CommentAdapter(commentRef,this, R.layout.item_message,comments);
         messageListView.setAdapter(mCommentAdapter);
 
-        btnSend.isEnabled();
         btnSend.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                CommentInfo commentInfo= new CommentInfo(commentInput.getText().toString(),mFirebaseAuth.getCurrentUser().getDisplayName());
-                commentRef.child(mFirebaseAuth.getCurrentUser().getDisplayName()).push().setValue(commentInfo);
+                CommentInfo commentInfo= new CommentInfo(mFirebaseAuth.getCurrentUser().getDisplayName(),commentInput.getText().toString());
+                commentRef.push().setValue(commentInfo);
                 commentInput.setText("");
             }
         });
