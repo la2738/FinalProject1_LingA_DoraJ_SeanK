@@ -2,6 +2,7 @@ package com.example.android.finalproject_linga_doraj_seank;
 
 import android.content.Context;
 import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 import android.support.design.widget.Snackbar;
 import android.os.Bundle;
 import android.text.Editable;
@@ -22,6 +23,7 @@ import com.google.android.youtube.player.YouTubeInitializationResult;
 import com.google.android.youtube.player.YouTubePlayer;
 import com.google.android.youtube.player.YouTubePlayerView;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -52,6 +54,7 @@ public class MakePencilBoxActivity extends YouTubeBaseActivity  {
     private FirebaseDatabase mFirebaseDatabase;
     private FirebaseAuth mFirebaseAuth;
     private CommentAdapter mCommentAdapter;
+    private ChildEventListener mChildEventListener;
 
 
 
@@ -81,8 +84,38 @@ public class MakePencilBoxActivity extends YouTubeBaseActivity  {
             public void onClick(View v) {
                 CommentInfo commentInfo= new CommentInfo(commentInput.getText().toString(),mFirebaseAuth.getCurrentUser().getDisplayName());
                 commentRef.child(mFirebaseAuth.getCurrentUser().getDisplayName()).push().setValue(commentInfo);
+                commentInput.setText("");
             }
         });
+
+        mChildEventListener = new ChildEventListener() {
+            @Override
+            public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
+                CommentInfo commentInfo = dataSnapshot.getValue(CommentInfo.class);
+                mCommentAdapter.add(commentInfo);
+            }
+
+            @Override
+            public void onChildChanged(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
+
+            }
+
+            @Override
+            public void onChildRemoved(@NonNull DataSnapshot dataSnapshot) {
+
+            }
+
+            @Override
+            public void onChildMoved(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        };
+        commentRef.addChildEventListener(mChildEventListener);
     }
 
     private void initYouTubePlayer() {

@@ -3,9 +3,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorAccent"
     android:orientation="vertical"
-    tools:context=".MakePencilBoxActivity"
-    android:background="@color/colorAccent">
+    tools:context=".MakePencilBoxActivity">
     <!--<VideoView-->
         <!--android:layout_width="match_parent"-->
         <!--android:layout_height="250dp" />-->
@@ -27,82 +27,82 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
             <TextView
-                android:layout_marginTop="5dp"
-                android:layout_marginLeft="12dp"
+                style="@style/defaultTitle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                style="@style/defaultTitle"
+                android:layout_marginLeft="12dp"
+                android:layout_marginTop="5dp"
                 android:text="@string/pencil_box_name"/>
 
             <View
-                android:layout_marginTop="5dp"
-                android:background="@color/separator"
                 android:layout_width = "fill_parent"
                 android:layout_height="2dp"
-                android:layout_centerVertical ="true"/>
+                android:layout_centerVertical ="true"
+                android:layout_marginTop="5dp"
+                android:background="@color/separator"/>
 
             <ImageView
-                android:layout_marginLeft="12dp"
-                android:layout_marginRight="12dp"
                 android:layout_width="match_parent"
                 android:layout_height="70dp"
+                android:layout_marginLeft="12dp"
+                android:layout_marginRight="12dp"
                 android:src="@drawable/project_author"/>
             <View
-                android:background="@color/separator"
                 android:layout_width = "fill_parent"
                 android:layout_height="2dp"
-                android:layout_centerVertical ="true"/>
+                android:layout_centerVertical ="true"
+                android:background="@color/separator"/>
 
             <ImageView
-                android:layout_marginLeft="12dp"
-                android:layout_marginRight="12dp"
                 android:layout_width="match_parent"
                 android:layout_height="70dp"
+                android:layout_marginLeft="12dp"
+                android:layout_marginRight="12dp"
                 android:src="@drawable/project_detail"/>
             <View
-                android:background="@color/separator"
                 android:layout_width = "fill_parent"
                 android:layout_height="2dp"
-                android:layout_centerVertical ="true"/>
+                android:layout_centerVertical ="true"
+                android:background="@color/separator"/>
             <TextView
-                android:layout_marginTop="5dp"
-                android:layout_marginLeft="12dp"
                 style="@style/cardParagraph"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="12dp"
+                android:layout_marginTop="5dp"
                 android:text="@string/pencil_box_tool"/>
             <View
-                android:layout_marginTop="5dp"
-                android:background="@color/separator"
                 android:layout_width = "fill_parent"
                 android:layout_height="2dp"
-                android:layout_centerVertical ="true"/>
-            <TextView
+                android:layout_centerVertical ="true"
                 android:layout_marginTop="5dp"
-                android:layout_marginLeft="12dp"
+                android:background="@color/separator"/>
+            <TextView
                 style="@style/cardParagraph"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="12dp"
+                android:layout_marginTop="5dp"
                 android:text="@string/pencil_box_tips"/>
             <View
-                android:layout_marginTop="5dp"
-                android:background="@color/separator"
                 android:layout_width = "fill_parent"
                 android:layout_height="2dp"
-                android:layout_centerVertical ="true"/>
+                android:layout_centerVertical ="true"
+                android:layout_marginTop="5dp"
+                android:background="@color/separator"/>
             <TextView
+                style="@style/defaultTitle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
                 android:layout_marginLeft="12dp"
-                android:text="Recommended for you..."
-                style="@style/defaultTitle"/>
+                android:layout_marginTop="5dp"
+                android:text="Recommended for you..."/>
 
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:padding="16dp"
-                android:background="@color/colorAccent">
+                android:background="@color/colorAccent"
+                android:padding="16dp">
 
                 <ImageView
                     android:id="@+id/project_photo"
@@ -115,80 +115,76 @@
 
                 <TextView
                     android:id="@+id/project_name"
+                    style="@style/cardTitle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentTop="true"
                     android:layout_toRightOf="@+id/project_photo"
-                    style="@style/cardTitle"
                     android:text="@string/screen_iphone_name"/>
 
                 <TextView
                     android:id="@+id/project_level"
+                    style="@style/cardParagraph"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/project_name"
                     android:layout_toRightOf="@+id/project_photo"
-                    style="@style/cardParagraph"
                     android:text="@string/level_b2"/>
 
                 <TextView
                     android:id="@+id/project_time"
+                    style="@style/cardParagraph"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/project_level"
                     android:layout_toRightOf="@+id/project_photo"
-                    style="@style/cardParagraph"
                     android:text="@string/screen_iphone_time"/>
 
                 <TextView
                     android:id="@+id/project_rating"
+                    style="@style/cardParagraph"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/project_time"
                     android:layout_toRightOf="@+id/project_photo"
-                    style="@style/cardParagraph"
                     android:text="@string/rating_4"/>
 
             </RelativeLayout>
 
             <View
-                android:layout_marginTop="5dp"
-                android:background="@color/separator"
                 android:layout_width = "fill_parent"
                 android:layout_height="2dp"
-                android:layout_centerVertical ="true"/>
+                android:layout_centerVertical ="true"
+                android:layout_marginTop="5dp"
+                android:background="@color/separator"/>
 
             <TextView
+                android:id="@+id/comments_textLine"
+                style="@style/defaultTitle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
                 android:layout_marginLeft="12dp"
-                android:text="Comments"
-                style="@style/defaultTitle"/>
-            <ScrollView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                android:layout_marginTop="5dp"
+                android:text="Comments"/>
+
 
                     <ListView
                         android:id="@+id/messageListView"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_above="@+id/linearLayout"
-                        android:stackFromBottom="true"
+                        android:layout_alignParentTop="true"
                         android:divider="@android:color/transparent"
-                        android:transcriptMode="alwaysScroll"
-                        tools:listitem="@layout/item_message"/>
+                        android:stackFromBottom="true"
+                        tools:listitem="@layout/item_message" />
 
                     <LinearLayout
                         android:id="@+id/linearLayout"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_alignParentBottom="true"
-                        android:layout_alignParentLeft="true"
                         android:layout_alignParentStart="true"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentBottom="true"
                         android:orientation="horizontal">
 
 
@@ -208,10 +204,6 @@
 
                     </LinearLayout>
 
-
-                </RelativeLayout>
-
-            </ScrollView>
 
         </LinearLayout>
     </ScrollView>
