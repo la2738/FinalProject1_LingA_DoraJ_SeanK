@@ -74,6 +74,7 @@ public class MakePencilBoxActivity extends YouTubeBaseActivity  {
 
         mFirebaseDatabase = FirebaseDatabase.getInstance();
         commentRef = mFirebaseDatabase.getReference().child("Comments");
+
         mFirebaseAuth = FirebaseAuth.getInstance();
         mCommentAdapter = new CommentAdapter(commentRef,this, R.layout.item_message,comments);
         messageListView.setAdapter(mCommentAdapter);

@@ -181,7 +181,7 @@ public class NearbyFragment extends Fragment implements OnMapReadyCallback , Vie
     private void showCurrentLocation() {
 
         LatLng currentLoc = new LatLng(this.currentLatitude, this.currentLongitude);
-//        LatLng currentLoc = new LatLng(24.80361, 120.96861);    //hsinchu
+
         Marker marker = map.addMarker(new MarkerOptions().position(currentLoc).title("Hello, I am here."));
         map.moveCamera(CameraUpdateFactory.newLatLng(marker.getPosition()));
     }

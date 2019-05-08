@@ -22,11 +22,12 @@ public class SearchActivity extends AppCompatActivity {
         Intent intent = getIntent();
 
 
-        fillCountryList();
+        fillTopicList();
         final AutoCompleteTextView editText = findViewById(R.id.actv);
 
         AutoCompleteTopicsAdapter adapter = new AutoCompleteTopicsAdapter(this,topicsList);
         editText.setAdapter(adapter);
+
 
         editText.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -39,7 +40,7 @@ public class SearchActivity extends AppCompatActivity {
 
     }
 
-    private void fillCountryList() {
+    private void fillTopicList() {
         topicsList = new ArrayList<>();
         topicsList.add(new Topics("Making A Cat Tree", R.drawable.cattree));
         topicsList.add(new Topics("Cleaning A Burnt Pan", R.drawable.cleanburntpan));
